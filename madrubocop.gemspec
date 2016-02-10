@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "madrubocop"
   spec.version       = Madrubocop::VERSION
   spec.authors       = ["Zach Toolson"]
-  spec.email         = ["zach.toolson@mx.com"]
+  spec.email         = ["zach.toolson@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Wrapper for MX specific RuboCop settings. https://twitter.com/madrubocop}
+  spec.description   = %q{Wrapper for MX specific RuboCop settings for managing custom settings across many projects.}
+  spec.homepage      = "https://github.com/ztoolson/madrubocop/"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
