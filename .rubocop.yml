@@ -1,6 +1,6 @@
 ---
 inherit_from:
-  - disabled.yml
+  - disabled_cops.yml
 
 AllCops:
   RunRailsCops: true # include Rails cops
