@@ -11,6 +11,10 @@ AllCops:
     - 'db/**/*'
     - 'vendor/**/*'
 
+##
+# Cops that are excluding a specific folder, or enforce a non default style
+#
+
 Lint/AmbiguousRegexpLiteral:
   Description: Checks for ambiguous regexp literals in the first argument of a method invocation without parentheses.
   Enabled: true
