@@ -1,7 +1,7 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'madrubocop/version'
+require "madrubocop/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "madrubocop"
@@ -9,15 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Zach Toolson"]
   spec.email         = ["zach.toolson@gmail.com"]
 
-  spec.summary       = %q{Wrapper for MX specific RuboCop settings. https://twitter.com/madrubocop}
-  spec.description   = %q{Wrapper for MX specific RuboCop settings for managing custom settings across many projects.}
+  spec.summary       = "Wrapper for MX specific RuboCop settings. https://twitter.com/madrubocop"
+  spec.description   = "Wrapper for MX specific RuboCop settings for managing custom settings across many projects."
   spec.homepage      = "https://github.com/ztoolson/madrubocop/"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
