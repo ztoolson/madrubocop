@@ -3,12 +3,17 @@ inherit_from:
   - disabled_cops.yml
 
 AllCops:
-  RunRailsCops: true # include Rails cops
   DisplayCopNames: true
+Rails:
+  Enabled: true
 
 ##
 # Cops that are excluding a specific folder, or enforce a non default style
 #
+
+Style/Alias:
+  Description: Use alias_method instead of alias in a class or module body.
+  EnforcedStyle: prefer_alias_method
 
 Style/AccessModifierIndentation:
   Description: Indent private/protected/public as deep as method definitions

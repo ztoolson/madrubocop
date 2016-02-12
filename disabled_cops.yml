@@ -42,6 +42,8 @@ Metrics/PerceivedComplexity:
 
 Performance/Detect:
   Enabled: false
+Performance/Casecmp:
+  Enabled: false
 Performance/StringReplacement:
   Description: Use tr or delete rather than gsub
   Enabled: false
@@ -121,6 +123,8 @@ Style/OptionHash:
 Style/PredicateName:
   Description: Check the names of predicate methods.
   Enabled: false
+Style/RedundantParentheses:
+  Enabled: false
 Style/RedundantSelf:
   Description: Don't use self where it's not needed.
   Enabled: false
@@ -145,8 +149,14 @@ Style/StructInheritance:
 Style/SymbolArray:
   Description: Use %i or %I for arrays of symbols.
   Enabled: false
-Style/TrailingComma:
-  Description: Checks for trailing comma in parameter lists and literals.
+Style/TrailingCommaInArguments:
+  Description: Checks for trailing comma in parameter lists.
+  Enabled: false
+Style/TrailingCommaInLiteral:
+  Description: Checks for trailing comma in literals.
+  Enabled: false
+Style/UnneededInterpolation:
+  Description: Prefer to_s over string interpolation.
   Enabled: false
 Style/WordArray:
   Description: Use %w or %W for arrays of words.
