@@ -1,5 +1,112 @@
-Style/StringLiterals:
-  Description: 'Checks if uses of quotes match the configured preference.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-string-literals'
-  EnforcedStyle: 'single_quotes'
+---
+inherit_from:
+  - disabled.yml
+
+AllCops:
+  RunRailsCops: true # include Rails cops
+  DisplayCopNames: true
+  Exclude:
+    - 'bin/**/*'
+    - 'coverage/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+
+Lint/AmbiguousRegexpLiteral:
+  Description: Checks for ambiguous regexp literals in the first argument of a method invocation without parentheses.
   Enabled: true
+  Exclude:
+  - "spec/**/*"
+Lint/ParenthesesAsGroupedExpression:
+  Description: Checks for method calls with a space before the opening parenthesis.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#parens-no-spaces
+  Enabled: true
+  Exclude:
+  - "spec/**/*"
+
+Style/AccessModifierIndentation:
+  Description: Indent private/protected/public as deep as method definitions
+  StyleGuide: https://git.moneydesktop.com/dev/ruby-style-guide#outdent-public-private-protected
+  Enabled: true
+  EnforcedStyle: outdent
+  SupportedStyles:
+  - outdent
+  - indent
+Style/BlockDelimiters:
+  Description: Avoid using {...} for multi-line blocks (multiline chaining is always ugly). Prefer {...} over do...end for single-line blocks.
+  StyleGuide: https://git.moneydesktop.com/dev/ruby-style-guide#single-line-blocks
+  Enabled: true
+  EnforcedStyle: line_count_based
+  SupportedStyles:
+  - line_count_based
+  - semantic
+  - braces_for_chaining
+  ProceduralMethods:
+  - benchmark
+  - bm
+  - bmbm
+  - create
+  - each_with_object
+  - measure
+  - new
+  - realtime
+  - tap
+  - with_object
+  FunctionalMethods:
+  - let
+  - let!
+  - subject
+  - watch
+  IgnoredMethods:
+  - lambda
+  - proc
+  - it
+  Exclude:
+  - "spec/**/*"
+Style/BlockEndNewline:
+  Description: Put end statement of multiline block on its own line.
+  Enabled: true
+  Exclude:
+  - "spec/**/*"
+Style/BracesAroundHashParameters:
+  Description: ''
+  Enabled: true
+  EnforcedStyle: no_braces
+  SupportedStyles:
+  - braces
+  - no_braces
+  - context_dependent
+  Exclude:
+  - "Capfile"
+Style/HashSyntax:
+  Description: 'Prefer Ruby 1.8 hash syntax { :a => 1, :b => 2 } over 1.9 syntax {
+    a: 1, b: 2 }.'
+  StyleGuide: https://git.moneydesktop.com/dev/ruby-style-guide#hash-literals
+  Enabled: true
+  EnforcedStyle: hash_rockets
+  SupportedStyles:
+  - ruby19
+  - ruby19_no_mixed_keys
+  - hash_rockets
+  UseHashRocketsWithSymbolValues: false
+  Exclude:
+  - "db/**/*"
+  - "Gemfile"
+Style/SpaceInsideHashLiteralBraces:
+  Description: Use spaces inside hash literal braces - or don't.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-operators
+  Enabled: true
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStyles:
+  - space
+  - no_space
+  Exclude:
+  - "spec/**/*"
+Style/StringLiterals:
+  Description: Checks if uses of quotes match the configured preference.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-string-literals
+  Enabled: true
+  EnforcedStyle: double_quotes
+  SupportedStyles:
+  - single_quotes
+  - double_quotes
