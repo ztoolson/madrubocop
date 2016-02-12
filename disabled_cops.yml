@@ -1,12 +1,10 @@
 ---
 Metrics/AbcSize:
   Description: A calculated magnitude based on number of assignments, branches, and conditions.
-  Reference: http://c2.com/cgi/wiki?AbcMetric
   Enabled: false
   Max: 15
 Metrics/BlockNesting:
   Description: Avoid excessive block nesting
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#three-is-the-number-thou-shalt-count
   Enabled: false
   Max: 3
 Metrics/ClassLength:
@@ -20,16 +18,10 @@ Metrics/CyclomaticComplexity:
   Max: 6
 Metrics/LineLength:
   Description: Limit lines to 80 characters.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
   Enabled: false
   Max: 80
-  AllowURI: true
-  URISchemes:
-  - http
-  - https
 Metrics/MethodLength:
   Description: Avoid methods longer than 10 lines of code.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#short-methods
   Enabled: false
   CountComments: false
   Max: 10
@@ -40,7 +32,6 @@ Metrics/ModuleLength:
   Max: 250
 Metrics/ParameterLists:
   Description: Avoid parameter lists longer than three or four parameters.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#too-many-params
   Enabled: false
   Max: 5
   CountKeywordArgs: true
@@ -50,86 +41,47 @@ Metrics/PerceivedComplexity:
   Max: 7
 
 Performance/Detect:
-  Description: ''
-  Reference: https://github.com/JuanitoFatas/fast-ruby#enumerabledetect-vs-enumerableselectfirst-code
   Enabled: false
 Performance/StringReplacement:
   Description: Use tr or delete rather than gsub
-  Reference: https://github.com/JuanitoFatas/fast-ruby#stringgsub-vs-stringtr-code
   Enabled: false
 
 Rails/ActionFilter:
   Description: Enforces consistent use of action filter methods.
   Enabled: false
-  EnforcedStyle: action
-  SupportedStyles:
-  - action
-  - filter
-  Include:
-  - app/controllers/**/*.rb
 Rails/Date:
   Description: Checks the correct usage of date aware methods, such as Date.today, Date.current etc.
   Enabled: false
-  EnforcedStyle: flexible
-  SupportedStyles:
-  - strict
-  - flexible
 Rails/FindBy:
   Description: Prefer find_by over where.first.
   Enabled: false
-  Include:
-  - app/models/**/*.rb
 Rails/TimeZone:
   Description: Checks the correct usage of time zone aware methods.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#time
-  Reference: http://danilenko.org/2012/7/6/rails_timezones
   Enabled: false
-  EnforcedStyle: flexible
-  SupportedStyles:
-  - strict
-  - flexible
-
 Style/AutoResourceCleanup:
   Description: Suggests the usage of an auto resource cleanup version of a method (if available).
   Enabled: false
 Style/CollectionMethods:
   Description: Preferred collection methods.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#map-find-select-reduce-size
   Enabled: false
-  PreferredMethods:
-    collect: map
-    collect!: map!
-    inject: reduce
-    detect: find
-    find_all: select
 Style/Copyright:
   Description: Include a copyright notice in each file before any code.
   Enabled: false
-  Notice: "^Copyright (\\(c\\) )?2[0-9]{3} .+"
-  AutocorrectNotice: ''
 Style/Documentation:
   Description: Document classes and non-namespace modules.
   Enabled: false
 Style/DoubleNegation:
   Description: Checks for uses of double negation (!!).
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-bang-bang
   Enabled: false
 Style/EachWithObject:
   Description: Prefer `each_with_object` over `inject` or `reduce`.
   Enabled: false
 Style/Encoding:
   Description: Use UTF-8 as the source file encoding.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#utf-8
   Enabled: false
-  EnforcedStyle: always
-  SupportedStyles:
-  - when_needed
-  - always
-  AutoCorrectEncodingComment: "# encoding: utf-8"
-Style/ExtraSpacing:
+Style/ExtraSpacing: # do we want this cop disabled?
   Description: Do not use unnecessary spacing.
   Enabled: false
-  AllowForAlignment: true
 Style/FirstArrayElementLineBreak:
   Description: Checks for a line break before the first element in a multi-line array.
   Enabled: false
@@ -144,130 +96,58 @@ Style/FirstMethodParameterLineBreak:
   Enabled: false
 Style/FormatString:
   Description: Enforce the use of Kernel#sprintf, Kernel#format or String#%.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#sprintf
   Enabled: false
-  EnforcedStyle: format
-  SupportedStyles:
-  - format
-  - sprintf
-  - percent
 Style/InlineComment:
   Description: Avoid inline comments.
   Enabled: false
 Style/Lambda:
   Description: Use the new lambda literal syntax for single-line blocks.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#lambda-multi-line
   Enabled: false
 Style/MethodCalledOnDoEndBlock:
   Description: Avoid chaining a method call on a do...end block.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#single-line-blocks
   Enabled: false
 Style/MissingElse:
   Description: Require if/case expressions to have an else branches. If enabled, it is recommended that Style/UnlessElse and Style/EmptyElse be enabled. This will conflict with Style/EmptyElse if Style/EmptyElse is configured to style "both"
   Enabled: false
-  EnforcedStyle: both
-  SupportedStyles:
-  - if
-  - case
-  - both
 Style/MutableConstant:
   Description: Do not assign mutable objects to constants.
   Enabled: false
 Style/Next:
   Description: Use `next` to skip iteration instead of a condition at the end.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-nested-conditionals
   Enabled: false
-  EnforcedStyle: skip_modifier_ifs
-  MinBodyLength: 3
-  SupportedStyles:
-  - skip_modifier_ifs
-  - always
 Style/OptionHash:
   Description: Don't use option hashes when you can use keyword arguments.
   Enabled: false
-  SuspiciousParamNames:
-  - options
-  - opts
-  - args
-  - params
-  - parameters
 Style/PredicateName:
   Description: Check the names of predicate methods.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark
   Enabled: false
-  NamePrefix:
-  - is_
-  - has_
-  - have_
-  NamePrefixBlacklist:
-  - is_
-  - has_
-  - have_
-  NameWhitelist:
-  - is_a?
 Style/RedundantSelf:
   Description: Don't use self where it's not needed.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-self-unless-required
   Enabled: false
 Style/RegexpLiteral:
   Description: Use / or %r around regular expressions.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-r
   Enabled: false
-  EnforcedStyle: slashes
-  SupportedStyles:
-  - slashes
-  - percent_r
-  - mixed
-  AllowInnerSlashes: false
 Style/Send:
   Description: Prefer `Object#__send__` or `Object#public_send` to `send`, as `send` may overlap with existing methods.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#prefer-public-send
   Enabled: false
 Style/SignalException:
   Description: Checks for proper usage of fail and raise.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#fail-method
   Enabled: false
-  EnforcedStyle: semantic
-  SupportedStyles:
-  - only_raise
-  - only_fail
-  - semantic
 Style/SingleLineBlockParams:
   Description: Enforces the names of some block params.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#reduce-blocks
   Enabled: false
-  Methods:
-  - reduce:
-    - a
-    - e
-  - inject:
-    - a
-    - e
 Style/StringMethods:
   Description: Checks if configured preferred methods are used over non-preferred.
   Enabled: false
-  PreferredMethods:
-    intern: to_sym
 Style/StructInheritance:
   Description: Checks for inheritance from Struct.new.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-extend-struct-new
   Enabled: false
 Style/SymbolArray:
   Description: Use %i or %I for arrays of symbols.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-i
   Enabled: false
 Style/TrailingComma:
   Description: Checks for trailing comma in parameter lists and literals.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas
   Enabled: false
-  EnforcedStyleForMultiline: no_comma
-  SupportedStyles:
-  - comma
-  - consistent_comma
-  - no_comma
 Style/WordArray:
   Description: Use %w or %W for arrays of words.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-w
   Enabled: false
-  MinSize: 0
-  WordRegex: !ruby/regexp '/\A[\p{Word}]+\z/'
